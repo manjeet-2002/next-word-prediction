@@ -3,3 +3,4 @@ joblib
 numpy
 tensorflow
 pickle
+python=3.10
