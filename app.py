@@ -33,7 +33,7 @@ def predict():
         top_tokens = [[mytokenizer.index_word[idx] for idx in indices] for indices in top_indices]
 
         # Return the prediction as JSON response
-        return jsonify(top_tokens.tolist())
+        return jsonify(top_tokens)
     except Exception as e:
         return jsonify({'error': str(e)})
 
