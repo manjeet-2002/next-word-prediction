@@ -1,6 +1,6 @@
+python==3.10
 flask
 joblib
 numpy
 tensorflow
 pickle
-python=3.10
