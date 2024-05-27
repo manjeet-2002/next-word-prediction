@@ -3,7 +3,6 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-import pickle
 
 app = Flask(__name__)
 
@@ -17,8 +16,8 @@ def predict():
         data = request.get_json()
         input_text = data['sentence']
         max_sequence_len = 17
-        with open('tokenizer.pkl', 'rb') as f:
-            mytokenizer = pickle.load(f)
+       
+        mytokenizer = joblib.load('tokenizer.pkl')
 
         sequences = mytokenizer.texts_to_sequences([input_text])[0]
 
